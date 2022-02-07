@@ -7,22 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import java.io.PrintWriter;
-import java.io.IOException;
-
 /**
- * Servlet implementation class ServletTest
+ * Servlet implementation class Send2
  */
-
-////@WebServlet("/ServletTest")
-public class ServletTest extends HttpServlet {
+//@WebServlet("/Send2")
+public class Send2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private String message="hello";
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletTest() {
+    public Send2() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,12 +27,12 @@ public class ServletTest extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-////		response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.setContentType("text.html");
-		PrintWriter out =response.getWriter();
-		out.println("<h1>"+message+"</h1>");
-		out.println("<h1>"+getServletConfig().getServletContext()+"</h1>");
-		out.println("<h>"+message+"</h>");
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("-------Send2");
+		System.out.println(request.getParameter("username"));
+		
+		Object send=request.getAttribute("send");
+		System.out.println("Send?:"+send);
 	}
 
 	/**
